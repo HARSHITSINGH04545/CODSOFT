@@ -1,0 +1,70 @@
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color:white;
+    color:black;
+    font-family: Arial, italic;
+}
+header {
+    background-color:rgb(50, 109, 205);
+    color:black;
+    padding: 13px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 11px;
+}
+nav ul li a {
+    text-decoration: solid;
+    color:ivory;
+}
+.webpage {
+    text-align: center;
+    padding: 110px;
+    background-color: rgb(240, 168, 127);
+}
+.webpage h1 {
+    font-size: 36px;
+    margin-bottom: 36px;
+}
+.webpage p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.button {
+    display: inline;
+    padding: 10px 20px;
+    background-color:black;
+    color:white;
+    text-decoration:solid;
+    border-radius: 6px;
+    transition: background-color 0.1s;
+}
+.button:hover {
+    background-color: grey;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+.feature {
+    text-align: center;
+    padding:20px;
+}
+.feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color:black;
+    background-color: rgb(50, 109, 205);
+}
