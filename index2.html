@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="sttyle.css" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="util.css" type="text/css"> -->
+    <title>CALCULATOR</title>
+    <style>
+        /* STTYLE.CSS FILE */
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.color{
+    background: black;
+  border-radius: 29px;
+  padding: 10px;
+  height: 65vh;
+}
+
+h1{
+    display: flex;
+justify-content: center;
+font-family: 'Varela Round', sans-serif;
+}
+.button{
+    padding: 20px;
+    margin: 5px 4px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.display{
+    height: 13vh;
+  
+}
+
+
+.row{
+    margin: 4px 0;
+}
+.row input{ 
+    margin: 0;
+    padding: 16px 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 17px;
+    background-color: black;
+    color: whitesmoke;
+  }
+.button{
+    background: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    
+    width: 58px;
+}
+.bt-col{
+    background: orangered;
+}
+
+/* UTIL .CSS FILE */
+.bg-red{
+    background: red;
+}
+.mx-auto{
+    margin: auto;
+}
+.flex{
+    display:flex;  
+}
+.flex-col{
+    flex-direction: column ;
+
+    align-items: center;
+}  
+    </style>
+</head>
+<body>
+    <h1>LETS DO SOME CALCULATIONS:</h1>
+    <div class="container  mx-auto   flex flex-col items-center">
+    <div class="color">
+        <div class="row display">
+            <input type="text" class="input">
+        </div>
+
+        <div class="row">
+            <button class="button bt-col">C</button>
+            <button class="button bt-col">%</button>
+            <button class="button bt-col">&#9003</button>
+            <button class="button bt-col">/</button>
+            <br>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button bt-col">*</button>
+            <br>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button bt-col">-</button>
+            <br>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button bt-col">+</button>
+            <br>
+        </div>
+        <div class="row">
+            <button class="button bt-col">(</button>
+            <button class="button bt-col">)</button>
+            <button class="button bt-col">.</button>
+            <button class="button bt-col">=</button>
+            <br>
+        </div>
+    </div>
+    </div>
+<script src="script.js">
+let string = "";
+let buttons = document.querySelectorAll('.button');
+
+Array.from(buttons).forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const buttonValue = e.target.innerHTML;
+
+    if (buttonValue === '=') {
+      // Calculate the result
+      try {
+        string = eval(string);
+        document.querySelector('input').value = string;
+      } catch (error) {
+        document.querySelector('input').value = 'Error';
+      }
+    } else if (buttonValue === 'C') {
+      // Clear the input field
+      string = '';
+      document.querySelector('input').value = '';
+    } else if (buttonValue === '⌫') { // Handle backspace button
+      string = string.slice(0, -1);
+      document.querySelector('input').value = string;
+    } else {
+      // Append the buttonValue to the string
+      string += buttonValue;
+      document.querySelector('input').value = string;
+    }
+  });
+});
+
+</script>
+    
+</body>
+</html>
